@@ -1,1 +1,101 @@
+AQUI VAMOS INICIAR O PROJETO 
+DEVEMOS TER UM BANCO DE DADOS, E O UTILIZADO É O MYSQL
+DEPOIS DE INTALADO, VAMOS CRIAR UMA PASTA DE USUÁRIO.
+1-PASTA DE USUARIO
+2- PODEMOS CRIAR UTILIZANDO AS OPÇÕES OU CRIAR NA MÃO DIGITANDO O CODIGO!
+2.1 - 
+  CREATE TABLE 'crud', 'USUARIOS'( 
+  'id' INT NOT NULL AUTO_INCREMENT,
+  'nome' VARCHAR(255) NOT NULL,
+  'email' VARCHAR(255) NOT NULL,
+  'fone' VARCHAR(45) NOT NULL,
+  'date_nascimento' DATE NOT NULL,
+PRIMARY KEY ('id'));                           ESSE SERIA O CÓDIGO DIGITADO NA MÃO PARA CRIAR UM BANCO DE DADO USUÁRIO.
 
+apply e está criado o banco !!!!!
+
+3- vamos adicionar manuamente as infomações dalan, darlan@test, 2000/01/01, 991953022  
+aply novamente para adc as informações
+caso fosse manual:
+
+INSERT INTO 'crud', 'usuarios' ('id', 'nome', 'email', 'fone', 'data_nascimento') 
+aply ...
+ para !!!!!!!!  (trabalhar localmente precisa configurar) !!!!!!!!!!! para nao dar nenhum erro ..
+
+------>>>>>>>>>    ALTER USER 'root'@'localhost' IDENTIFIED WITF mysql_native_password BY 'willdev123';
+clica no raio para executar 
+
+no vscode dentro da pasta crud vou criar 2 pasta - API e FRONTEND -> que vai ser o back e front....
+4-no terminal da pasta front vou dar um (cd api) 
+criar o projeto node com (node init -y)
+vai criar o arquivo package.json
+
+instalar as biblioteca (yarn add express nodemon mysql cors)
+express - construção da api
+nodemon - cada vez que salvar nao precisar parar o projeto e startar novamento 
+mysql - nosso banco de dados
+cors - nenhum conflito por está localmente.
+enter já vai criar tudo ....
+
+5- no packge.json - vou apagar  o comando do script e trocar por ("start": "nodemon index.js")
+5.1 - na pasta com nome api, vamos criar um novo arquivo com o mesmo nome (index.js)
+
+6- no arquivo packge.json, vamos adicionar abaixo da main -> ("type": "module",) para exportação do código
+
+7- no index.js vou exportar:
+
+import express from "express"
+import cors from "cors"
+
+const app = express()
+
+app.use(express.jason())
+app.use(cors())
+
+app.listen(8800)
+
+8- consfiguração do banco
+
+import mysql from "mysql"
+
+expot const db = mysql.createConnection({
+host: "localhost",
+user: "root",
+password: "darlan123",
+database: "crud",
+});
+
+9- dentro da pasta api -> criar pasta -> routes -> dentro de routes criar arquivo users.js, cria outro tbm com nome controllers
+
+dentro da routes.js/ users.js:
+export express from "express";
+import { getUsers} from "../controllers/user.js";
+
+const router = express.Router();
+
+router.get("/", getUsers)
+
+export default router
+
+9.2- dentro de controller/user.js
+import {db} from "../db.js";
+
+export const getUsers = (_, res) => {
+const q = "SELECT * FROM usuarios";
+
+db.query(q, (err, data) => {
+if(err) return res.json(err);
+
+return res.status(200).json(data);
+});
+};
+
+10- lá no index.js vou criar um :
+app.use("/", userRoutes)
+
+vou chamar com import userRoutes from "./routes/users.js"
+
+vou rdar o projeto com yarn no terminal ....
+
+(yarn start)
+para ver o resultado vou na barra do navegadro e digitar localhost.8800 que foi a porta que indicamos, tem que aparece as infomações do banco de dados na tela .....
