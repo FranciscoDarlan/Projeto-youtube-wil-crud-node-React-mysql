@@ -27,13 +27,15 @@ clica no raio para executar
 ________________________________________________________________________________________________________________________________________________________________
 no vscode dentro da pasta crud vou criar 2 pasta - API e FRONTEND -> que vai ser o back e front....
 4-no terminal da pasta front vou dar um (cd api) 
-criar o projeto node com (node init -y)  OU NPM QUE É UMA "PLAY STORE DE CODIGOS" no terminal dentro do arquivo javascript vou dar um (npm init -y)
+criar o projeto node com (node init -y)  OU NPM QUE É UMA "PLAY STORE DE CODIGOS" no terminal dentro do arquivo javascript vou dar um (npm init -y) assim que inicia um ´projeto NODE!!!!
 vai criar o arquivo package.json - ok
 
 ________________________________________________________________________________________________________________________________________________________________
 
 instalar as biblioteca (yarn add express nodemon mysql cors)
-express - construção da api
+express - construção da api  -  com NPM VAMOS USAR ( npm add express) vai criar a node_modules com packlock.json  ok
+no meu arquivo javascript vou importar o express -> no terminal vou dar um (node arquivocriado.js ) vai dar error, pois no pack.json tenho que criar ("type" = "module")
+
 nodemon - cada vez que salvar nao precisar parar o projeto e startar novamento 
 mysql - nosso banco de dados
 cors - nenhum conflito por está localmente.
