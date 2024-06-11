@@ -36,6 +36,13 @@ instalar as biblioteca (yarn add express nodemon mysql cors)
 express - construção da api  -  com NPM VAMOS USAR ( npm add express) vai criar a node_modules com packlock.json  ok
 no meu arquivo javascript vou importar o express -> no terminal vou dar um (node arquivocriado.js ) vai dar error, pois no pack.json tenho que criar ("type" = "module")
 
+vou criar uma variavel com nome app = express();
+tenho que usar essa variavel com a função ouvir = listen  ->>>>>  app.listen(3000) e colocar uma porta dentro. vamos usar a 3 mil por exemplo!!!!!!
+
+no terminal vou dar um (node server.js) e abrir no navegador o lacalhost:+NÚMERO DA PORTA COLOCADO NO BACKEND ->>>  LOCALHOST:3000 VAI SER DIRECIONADO PARA NOSSO COPDIGO LOCALMENTE.
+
+________________________________________________________________________________________________________________________________________________________________
+
 nodemon - cada vez que salvar nao precisar parar o projeto e startar novamento 
 mysql - nosso banco de dados
 cors - nenhum conflito por está localmente.
