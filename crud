@@ -41,6 +41,14 @@ tenho que usar essa variavel com a função ouvir = listen  ->>>>>  app.listen(3
 
 no terminal vou dar um (node server.js) e abrir no navegador o lacalhost:+NÚMERO DA PORTA COLOCADO NO BACKEND ->>>  LOCALHOST:3000 VAI SER DIRECIONADO PARA NOSSO COPDIGO LOCALMENTE.
 
+Fazendo a primeira rota --->>>>
+app.get('/usuarios', (abacate, mamao) =>{  aqui normalmnte será chamdo de: (request, response)
+    mamao.send("olá, rota acessada com sucesso")
+    res.send("olá, rota acessada com sucesso!")
+}) - get lista usuarios
+
+lá no namvegdor vou acessar pelo ---->>>>>>  (localhost:3000/usuarios)
+TEM QUE VOLTAR COM A MESNAGEM NA TELA OLÁ, ROTA ACESSADA COM SUCESSO!  "!!!!!!!!!!!!!!!!!!!!!!!!!
 ________________________________________________________________________________________________________________________________________________________________
 
 nodemon - cada vez que salvar nao precisar parar o projeto e startar novamento 
